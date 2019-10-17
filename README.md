@@ -168,4 +168,5 @@ array(9) {
 ## Полезные материалы
 * Описание API сервиса геокодирования http://api.sputnik.ru/maps/geocoder/
 * Описание API для чат ботов Вконтакте: https://vk.com/dev/bots_docs
+* Спецификация формата GeoJSON (RU): http://gis-lab.info/docs/geojson_ru.html
 
