@@ -1,0 +1,16 @@
+{
+  "name": "eslavon/geocoder",
+  "description" : "Geocoder for determining coordinates by name using the SPUTNIK geocoding service",
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "Victor Vinogradov",
+      "email": "victor@eslavon.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Geocoder\\": "src/"}
+  },
+  "require-dev": {
+  }
+}
