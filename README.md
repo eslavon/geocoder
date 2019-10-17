@@ -26,10 +26,7 @@ $geo = new Geocoder();
 $address = "Иваново";
 $data = $geo->request($address);
 $array = $geo->getAddressArray($data);
-$filtration_array = $geo->filtrationArray($array);
-
 var_dump($array);
-var_dump($filtration_array);
 ```
 
 ### Содержимое массива $array
@@ -95,5 +92,70 @@ array(10) {
         ["longitude"]=> float(37.430183) 
         ["latitude"]=> float(59.508274) 
     } 
+}
+```
+Как мы видим элементы массива 0 и 2 практически идентичны и близки по координатам. Такие дубликаты возникают, когда в запрашиваемом населенном пункте иметься железнодорожная станция, потому что сервис геокодирования дополнительно возвращает ее координаты. Что бы удалить такие дубликаты используется метод 
+``` php
+$filtration_array = $geo->filtrationArray($array);
+var_dump($filtration_array);
+```
+
+### Содержимое массива $filtration_array
+
+``` php
+array(9) {
+    [0]=> array(4) { 
+        ["country"]=> string(12) "Россия" 
+        ["address"]=> string(35) "Ивановская область" 
+        ["longitude"]=> float(40.97374) 
+        ["latitude"]=> float(56.998444) 
+    } 
+    [1]=> array(4) { 
+        ["country"]=> string(16) "Беларусь" 
+        ["address"]=> string(33) "Брестская область" 
+        ["longitude"]=> float(25.531807) 
+        ["latitude"]=> float(52.142063) 
+    } 
+    [3]=> array(4) { 
+        ["country"]=> string(12) "Россия" 
+        ["address"]=> string(35) "Московская область" 
+        ["longitude"]=> float(39.227577) 
+        ["latitude"]=> float(55.379974) 
+    } 
+    [4]=> array(4) { 
+        ["country"]=> string(12) "Россия" 
+        ["address"]=> string(71) "Ленинградская область Кировский район" 
+        ["longitude"]=> float(31.102154) 
+        ["latitude"]=> float(59.66092) 
+    } 
+    [5]=> array(4) { 
+        ["country"]=> string(12) "Россия" 
+        ["address"]=> string(73) "Нижегородская область Городецкий район" 
+        ["longitude"]=> float(43.4175) 
+        ["latitude"]=> float(56.691113) 
+    } 
+    [6]=> array(4) { 
+        ["country"]=> string(12) "Россия" 
+        ["address"]=> string(65) "Псковская область Островский район" 
+        ["longitude"]=> float(28.2314) 
+        ["latitude"]=> float(57.1738) 
+    } 
+    [7]=> array(4) { 
+        ["country"]=> string(12) "Россия" 
+        ["address"]=> string(65) "Псковская область Невельский район" 
+        ["longitude"]=> float(29.992577) 
+        ["latitude"]=> float(56.05326) 
+    } 
+    [8]=> array(4) { 
+        ["country"]=> string(12) "Россия" 
+        ["address"]=> string(71) "Псковская область Великолукский район" 
+        ["longitude"]=> float(30.253893) 
+        ["latitude"]=> float(56.4623) 
+    } [9]=> array(4) { 
+        ["country"]=> string(12) "Россия" 
+        ["address"]=> string(73) "Вологодская область Череповецкий район" 
+        ["longitude"]=> float(37.430183) 
+        ["latitude"]=> float(59.508274) 
+    }
 }
 ```
