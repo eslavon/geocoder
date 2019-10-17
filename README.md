@@ -151,7 +151,8 @@ array(9) {
         ["address"]=> string(71) "Псковская область Великолукский район" 
         ["longitude"]=> float(30.253893) 
         ["latitude"]=> float(56.4623) 
-    } [9]=> array(4) { 
+    } 
+    [9]=> array(4) { 
         ["country"]=> string(12) "Россия" 
         ["address"]=> string(73) "Вологодская область Череповецкий район" 
         ["longitude"]=> float(37.430183) 
