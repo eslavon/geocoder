@@ -2,6 +2,7 @@
   "name": "eslavon/geocoder",
   "description" : "Geocoder for determining coordinates by name using the SPUTNIK geocoding service",
   "type" : "library",
+  "keywords": ["geo","geojson","sputnik"],
   "homepage": "https://github.com/eslavon/Geocoder",
   "license": "MIT License",
   "authors": [
