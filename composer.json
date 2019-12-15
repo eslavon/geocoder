@@ -9,7 +9,7 @@
     }
   ],
   "autoload": {
-    "psr-4": {"Geocoder\\": "src/"}
+    "psr-4": {"Eslavon\\Geocoder\\": "src/"}
   },
   "require-dev": {
   },

@@ -10,10 +10,13 @@
 
 namespace Eslavon\Geocoder\Request;
 
-
 use Exception;
 
-class SendRequestException extends Exception
+/**
+ * Class SendRequestException
+ * @package Eslavon\Geocoder\Request
+ */
+class RequestException extends Exception
 {
 
 }

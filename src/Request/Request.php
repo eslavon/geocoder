@@ -10,14 +10,16 @@
 
 namespace Eslavon\Geocoder\Request;
 
-use Eslavon\Geocode\Response\ClientResponse;
+use Eslavon\Geocoder\Response\Response;
+
+
 
 /**
- * Class SendRequest
- * @package Eslavon\Geocoder
+ * Class Request
+ * @package Eslavon\Geocoder\Request
  */
 
-class SendRequest extends SendRequestException
+class Request extends RequestException
 {
     /**
      * URL request
@@ -34,7 +36,7 @@ class SendRequest extends SendRequestException
     protected $option;
 
     /**
-     * SendRequest constructor.
+     * Request constructor.
      *
      * @param string $url - URL request
      * @param array $option - CURL option
@@ -48,8 +50,8 @@ class SendRequest extends SendRequestException
     /**
      * Send request
      *
-     *  @return ClientResponse
-     *  @throws SendRequestException
+     *  @return Response
+     *  @throws RequestException
      */
     public function send()
     {
@@ -65,9 +67,9 @@ class SendRequest extends SendRequestException
             if ($curl_error) {
                 $error_msg .= ": {$curl_error}";
             }
-            throw new SendRequestException($error_msg);
+            throw new RequestException($error_msg);
         }
 
-        return new ClientResponse($response);
+        return new Response($response);
     }
 }
