@@ -1,20 +1,20 @@
 # Geocoder
-Библиотеква, для получения географических координат населенного пункта, по его названию.
+EN: The library, to obtain the geographical coordinates of the city, by its name.
 
+RU: Библиотека, для получения географических координат населенного пункта, по его названию.
 
-## Подключение
-* Скачать проект
-* Выполнить команду в папке проекта
+[![Packagist](https://img.shields.io/badge/Packagist-v1.0-green)](https://packagist.org/packages/eslavon/geocoder)
+[![PHP Version](https://img.shields.io/badge/PHP-v%207.3-brightgreen)](https://www.php.net/releases/7_3_0.php)
+
+## Installation
+* EN: The Eslavon Geocoder can be installed using Composer by running the following command:
+     
+* RU: Установить библиотеку можно с помощью Composer, выполнив следующую команду:
 ```
-composer install
+composer require eslavon/geocoder
 ```
 
-* Подключить библиотеку в вашем файле
-```php
-require __DIR__ . "/vendor/autoload.php";
-```
-
-## Пример использования
+## Example
 
 ```php
 require __DIR__ . "/vendor/autoload.php";
@@ -27,7 +27,7 @@ $response = $geocoder->getResponse();
 var_dump($response);
 ```
 
-### Содержимое массива $response
+### Result
 ```php
 array(9) {
     [0]=> array(4) { 
@@ -87,8 +87,8 @@ array(9) {
 }
 ```
 
-## Полезные материалы
+## Полезные материалы (RU)
 * Описание API сервиса геокодирования http://api.sputnik.ru/maps/geocoder/
-* Описание API для чат ботов Вконтакте: https://vk.com/dev/bots_docs
 * Спецификация формата GeoJSON (RU): http://gis-lab.info/docs/geojson_ru.html
+
 
