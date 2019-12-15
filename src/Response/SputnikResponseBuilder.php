@@ -1,22 +1,50 @@
 <?php
-
+/**
+ * Geocoder
+ * PHP Version 7.3
+ *
+ * @author    Vinogradov Victor <victor@eslavon.ru>
+ * @copyright Vinogradov Victor
+ * @license   MIT License
+ */
 
 namespace Eslavon\Geocoder\Response;
 
 
+/**
+ * Class SputnikResponseBuilder
+ * @package Eslavon\Geocoder\Response
+ */
 class SputnikResponseBuilder implements ResponseBuilder
 {
+    /**
+     * Response
+     * @var string
+     */
+    public $response;
 
-    public $response = false;
-
-    public function __construct($response)
+    /**
+     * SputnikResponseBuilder constructor.
+     * @param string $response
+     */
+    public function __construct(string $response)
     {
         $this->response = $response;
     }
 
+    /**
+     * Get Address Array
+     *
+     * @return array
+     * @throws ResponseException
+     */
     public function getAddressArray()
     {
         $data = json_decode($this->response,true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            $error_msg = json_last_error_msg();
+            throw new ResponseException($error_msg);
+        }
         foreach ($data["result"]["address"][0]["features"] as $key => $value) {
             $address_string = null;
             foreach ($value["properties"]["address_components"] as $key_address => $result) {
@@ -42,7 +70,7 @@ class SputnikResponseBuilder implements ResponseBuilder
     /**
      * Remove duplicates from array
      *
-     * @param array $data
+     * @param array $array
      * @return array
      *
      */

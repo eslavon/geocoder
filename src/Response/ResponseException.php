@@ -10,11 +10,13 @@
 
 namespace Eslavon\Geocoder\Response;
 
+use Exception;
+
 /**
- * Interface ResponseBuilder
+ * Class ResponseException
  * @package Eslavon\Geocoder\Response
  */
-interface ResponseBuilder
+class ResponseException extends Exception
 {
-    public function getAddressArray();
+
 }

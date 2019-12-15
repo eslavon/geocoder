@@ -12,13 +12,10 @@ namespace Eslavon\Geocoder\Request;
 
 use Eslavon\Geocoder\Response\Response;
 
-
-
 /**
  * Class Request
  * @package Eslavon\Geocoder\Request
  */
-
 class Request extends RequestException
 {
     /**
