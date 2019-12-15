@@ -12,5 +12,9 @@
     "psr-4": {"Geocoder\\": "src/"}
   },
   "require-dev": {
+  },
+  "require": {
+    "ext-json": "*",
+    "ext-curl": "*"
   }
 }

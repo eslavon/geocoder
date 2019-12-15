@@ -5,7 +5,7 @@
  *
  * @author    Vinogradov Victor <victor@eslavon.ru>
  * @copyright Vinogradov Victor
- * @license   https://opensource.org/licenses/MIT MIT License
+ * @license   MIT License
  */
 
 namespace Geocoder\Core;
@@ -17,13 +17,19 @@ namespace Geocoder\Core;
 class Geocoder extends GeocoderException
 {
     /**
+     * CURL options
+     * @var array
+     */
+    protected $curl_options;
+
+    /**
      * API URL
      *
      * @var string
      */	
 	private $api = "http://search.maps.sputnik.ru/search/addr?q=";
 
-    /**
+	/**
      * Send an API request
      *
      * @param string $address
@@ -35,10 +41,12 @@ class Geocoder extends GeocoderException
 	{
 		$address = urlencode($address);
 		$url = $this->api.$address;
+
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
 		$data = curl_exec($curl);
+
 		if ($data === FALSE) {
 			$error = curl_error($curl);
         	throw new GeocoderException($error);
