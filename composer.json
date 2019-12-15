@@ -1,6 +1,8 @@
 {
   "name": "eslavon/geocoder",
   "description" : "Geocoder for determining coordinates by name using the SPUTNIK geocoding service",
+  "type" : "library",
+  "homepage": "https://github.com/eslavon/Geocoder",
   "license": "MIT License",
   "authors": [
     {
@@ -14,6 +16,7 @@
   "require-dev": {
   },
   "require": {
+    "php": ">=7.3",
     "ext-json": "*",
     "ext-curl": "*"
   }
