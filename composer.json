@@ -4,7 +4,7 @@
   "type" : "library",
   "keywords": ["geo","geojson","sputnik"],
   "homepage": "https://github.com/eslavon/Geocoder",
-  "license": "MIT License",
+  "license": "MIT",
   "authors": [
     {
       "name": "Victor Vinogradov",
@@ -13,8 +13,6 @@
   ],
   "autoload": {
     "psr-4": {"Eslavon\\Geocoder\\": "src/"}
-  },
-  "require-dev": {
   },
   "require": {
     "php": ">=7.3",
