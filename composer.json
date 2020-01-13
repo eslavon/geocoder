@@ -5,6 +5,7 @@
   "keywords": ["geo","geojson","sputnik"],
   "homepage": "https://github.com/eslavon/Geocoder",
   "license": "MIT",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Victor Vinogradov",
