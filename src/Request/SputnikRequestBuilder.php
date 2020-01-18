@@ -1,7 +1,7 @@
 <?php
 /**
  * Geocoder
- * PHP Version 7.3.
+ * PHP Version 7.4.
  *
  * @author    Vinogradov Victor <victor@eslavon.ru>
  * @copyright Vinogradov Victor
@@ -21,19 +21,19 @@ class SputnikRequestBuilder implements RequestBuilder
      * URL SPUTNIK API
      * @const string
      */
-    protected const SPUTNIK_API_URL = "http://search.maps.sputnik.ru/search/addr?q=";
+    protected const API_URL = "http://search.maps.sputnik.ru/search/addr?q=";
 
     /**
-     *  URL request
+     * URL request
      * @var string
      */
-    protected $url;
+    protected string $url;
 
     /**
-     * CURL options
+     * cURL options
      * @var array
      */
-    protected $options;
+    protected array $options;
 
     /**
      * SputnikRequestBuilder constructor.
@@ -68,16 +68,16 @@ class SputnikRequestBuilder implements RequestBuilder
      * @param string $address
      * @return string
      */
-    private function createUrl(string $address)
+    private function createUrl(string $address) :string
     {
-        return self::SPUTNIK_API_URL.$address;
+        return self::API_URL.$address;
     }
 
     /**
      * Get request
      * @return Request
      */
-    public function getRequest()
+    public function getRequest():Request
     {
         return new Request($this->url,$this->options);
     }
